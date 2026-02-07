@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         安卓Edge下载器调用1DM+
+// @name         安卓Edge下载器-默认调用1DM+
 // @namespace    http://tampermonkey.net/
 // @version      10.0.Final
 // @description  通过检测链接关键字调用第三方下载器(只适用于1DM+)只适用于安卓Edge(chromium),Firefox默认禁用
