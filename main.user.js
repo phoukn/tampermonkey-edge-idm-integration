@@ -15,9 +15,7 @@
 (function() {
     'use strict';
 
-    // ================= 0. 浏览器检测 (核心新增) =================
-    // Firefox 的 UA 通常包含 "Firefox" 或 "FxiOS"
-    // 如果检测到是 Firefox，直接退出，不执行后续任何逻辑
+    // ================= 0. 浏览器检测  =================
     const ua = navigator.userAgent;
     if (ua.includes('Firefox') || ua.includes('FxiOS')) {
         console.log('🚫 [IDM+ Script] 检测到 Firefox，脚本已自动禁用。');
