@@ -8,8 +8,8 @@
 // @match        *://*/*
 // @grant        none
 // @run-at       document-start
-// @downloadURL 
-// @updateURL 
+// @downloadURL https://github.com/phoukn/tampermonkey-edge-idm-integration/blob/main/main.user.js
+// @updateURL https://github.com/phoukn/tampermonkey-edge-idm-integration/blob/main/main.user.js
 // ==/UserScript==
 
 (function() {
