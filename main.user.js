@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安卓Edge下载器-默认调用1DM+
-// @namespace    http://tampermonkey.net/
-// @version      10.0.Final
+// @namespace    https://github.com/phoukn/tampermonkey-edge-idm-integration/tree/main
+// @version      1.0
 // @description  通过检测链接关键字调用第三方下载器(只适用于1DM+)只适用于安卓Edge(chromium),Firefox默认禁用
 // @author       Gemini 3 PRO
 // @contributor https://github.com/JulianRyder01
