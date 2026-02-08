@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安卓Edge下载器-默认调用1DM+
 // @namespace    https://github.com/phoukn/tampermonkey-edge-idm-integration/tree/main
-// @version      1.4.1
+// @version      1.4.2
 // @description  通过检测链接关键字调用第三方下载器（仅适用于1DM+），仅限安卓Edge（Chromium），Firefox默认禁用
 // @author       Gemini 3 PRO & Qwen3-Coder
 // @contributor  https://github.com/JulianRyder01
@@ -80,7 +80,10 @@
             lowerUrl.includes('/signup') ||
             lowerUrl.includes('/logout') ||
             lowerUrl.includes('/account/') ||
-            lowerUrl.includes('/user/')
+            lowerUrl.includes('/user/') ||
+            lowerUrl.includes('/blob/') ||      // GitHub
+            lowerUrl.includes('/src/') ||       // GitLab (部分)
+            lowerUrl.includes('/tree/')         // GitHub/GitLab 目录页
         ) {
             return false;
         }
