@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安卓Edge下载器-默认调用1DM+
 // @namespace    https://github.com/phoukn/tampermonkey-edge-idm-integration/tree/main
-// @version      1.4.2
+// @version      1.4.3
 // @description  通过检测链接关键字调用第三方下载器（仅适用于1DM+），仅限安卓Edge（Chromium），Firefox默认禁用
 // @author       Gemini 3 PRO & Qwen3-Coder
 // @contributor  https://github.com/JulianRyder01
@@ -19,6 +19,11 @@
     const ua = navigator.userAgent;
     if (ua.includes('Firefox') || ua.includes('FxiOS')) {
         console.log('🚫 [IDM+ Script] 检测到 Firefox，脚本已自动禁用。');
+        return;
+    }
+    // 【关键】只在 Android 设备上运行
+    if (!ua.includes('Android')) {
+        console.log('🖥️ [IDM+ Script] 非 Android 设备，脚本已禁用。');
         return;
     }
     console.log('✅ [IDM+ Script] 检测到 Chromium/Edge，脚本启动。');
