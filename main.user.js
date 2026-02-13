@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安卓Edge下载器-默认调用1DM+
 // @namespace    https://github.com/phoukn/tampermonkey-edge-idm-integration/tree/main
-// @version      1.4.3
+// @version      1.4.4
 // @description  通过检测链接关键字调用第三方下载器（仅适用于1DM+），仅限安卓Edge（Chromium），Firefox默认禁用
 // @author       Gemini 3 PRO & Qwen3-Coder
 // @contributor  https://github.com/JulianRyder01
@@ -31,27 +31,50 @@
     // ================= 1. 配置区域 =================
     const IDM_PACKAGE = 'idm.internet.download.manager.plus';
 
-    const EXTENSIONS = [
-        // === Android 安装包 ===
-        '.apk', '.apk.1', '.apks', '.apks.1', '.xapk', '.apkm', '.ipa', '.obb', '.aab',
-        // === 压缩文件 ===
-        '.zip', '.rar', '.7z', '.tar', '.gz', '.tgz', '.bz2', '.xz',
-        '.iso', '.cab', '.jar', '.z',
-        // === 视频媒体 ===
-        '.mp4', '.mkv', '.avi', '.mov', '.flv', '.wmv', '.webm',
-        '.m4v', '.3gp', '.ts', '.mpg', '.mpeg', '.vob',
-        // === 音频媒体 ===
-        '.mp3', '.flac', '.wav', '.ogg', '.m4a', '.aac', '.wma', '.ape',
-        // === 文档/电子书 ===
-        '.pdf', '.epub', '.mobi', '.azw3', '.djvu',
-        '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
-        // === 可执行/系统文件 ===
-        '.exe', '.msi', '.bin', '.dat', '.dmg', '.bat', '.sh', '.img',
-        // === 种子/磁力 ===
-        '.torrent'
-        // === 图片（默认关闭）===
-        // '.jpg', '.jpeg', '.png', '.webp', '.gif', '.bmp', '.svg', '.tiff'
-    ];
+   const EXTENSIONS = [
+    // === Android 安装包 ===
+    '.apk', '.apk.1', '.apks', '.apks.1', '.xapk', '.apkm', '.ipa', '.obb', '.aab',
+
+    // === 压缩文件 ===
+    '.zip', '.zip.001', '.rar', '.7z', '.tar', '.gz', '.tgz', '.bz2', '.xz',
+    '.iso', '.cab', '.jar', '.z',
+
+    // === 视频媒体 ===
+    '.mp4', '.mkv', '.avi', '.mov', '.flv', '.wmv', '.webm', '.m4v', '.3gp', '.ts',
+
+    // === 音频媒体 ===
+    '.mp3', '.flac', '.wav', '.ogg', '.m4a', '.aac', '.wma', '.ape',
+
+    // === 文档/电子书 ===
+    '.pdf', '.epub', '.mobi', '.azw3', '.djvu', '.cbz', '.cbr',
+    '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
+    '.rtf', '.odt', '.ods', '.odp',
+
+    // === Apple iWork ===
+    '.key', '.keynote', '.pages', '.numbers',
+
+    // === Web / 开发文件 ===
+    '.js', '.mjs', '.cjs', '.ts', '.tsx', '.jsx',
+    '.json', '.xml', '.yaml', '.yml', '.html', '.css',
+    '.md', '.markdown', '.txt', '.log', '.ini', '.csv',
+
+    // === 源代码 ===
+    '.c', '.cpp', '.h', '.hpp', '.java', '.py', '.go', '.rs', '.rb', '.php',
+    '.swift', '.kt', '.cs', '.lua', '.r', '.sh', '.ps1',
+
+    // === 设计与工程 ===
+    '.dwg', '.dxf', '.xmind', '.vsd', '.vsdx', '.ai', '.psd', '.fig', '.sketch',
+
+    // === 可执行/系统文件 ===
+    '.exe', '.msi', '.bin', '.dmg', '.deb', '.rpm', '.app',
+
+    // === 种子/磁力 ===
+    '.torrent',
+
+    // === 临时/分段文件 ===
+    '.part', '.tmp'
+    //'.jpg', '.jpeg', '.png', '.webp', '.gif', '.bmp', '.svg', '.tiff', '.ico'
+];
 
     /**
      * [广谱关键字库 - 精准上下文匹配]
