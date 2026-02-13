@@ -33,7 +33,7 @@
 
     const EXTENSIONS = [
         // === Android 安装包 ===
-        '.apk', '.apks', '.xapk', '.apkm', '.ipa', '.obb', '.aab',
+        '.apk', '.apk.1', '.apks', '.apks.1', '.xapk', '.apkm', '.ipa', '.obb', '.aab',
         // === 压缩文件 ===
         '.zip', '.rar', '.7z', '.tar', '.gz', '.tgz', '.bz2', '.xz',
         '.iso', '.cab', '.jar', '.z',
