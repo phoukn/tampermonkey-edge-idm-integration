@@ -55,7 +55,7 @@
 
     // === Web / 开发文件 ===
     '.js', '.mjs', '.cjs', '.ts', '.tsx', '.jsx',
-    '.json', '.xml', '.yaml', '.yml', '.html', '.css',
+    '.json', '.xml', '.yaml', '.yml',
     '.md', '.markdown', '.txt', '.log', '.ini', '.csv', 'list',
 
     // === 源代码 ===
