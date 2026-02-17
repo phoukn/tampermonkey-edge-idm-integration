@@ -112,6 +112,7 @@
             lowerUrl.includes('/blob/') ||
             lowerUrl.includes('/src/') ||
             lowerUrl.includes('/tree/') ||
+            lowerUrl.includes('/refs/') ||
             lowerUrl.includes('/edit/')
         ) {
             return false;
